@@ -1,0 +1,10 @@
+
+
+Started GET "/" for 127.0.0.1 at Mon Mar 14 15:28:06 +0100 2011
+
+LoadError (no such file to load -- sqlite3):
+  
+
+Rendered /opt/local/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /opt/local/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.4ms)
+Rendered /opt/local/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (42.9ms)
