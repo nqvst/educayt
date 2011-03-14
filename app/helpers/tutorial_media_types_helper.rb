@@ -1,0 +1,2 @@
+module TutorialMediaTypesHelper
+end

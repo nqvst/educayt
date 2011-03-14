@@ -1,0 +1,12 @@
+<div id="feed">
+	
+  <ul>
+  	<% unless@feed.empty? %>
+		<li class="meta_trigger feed_item">
+			<ul class="meta">
+  			<%= render @feed%>  
+			</ul>
+		</li>
+	<% end %>
+  </ul>
+</div>

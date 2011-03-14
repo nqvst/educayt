@@ -1,0 +1,7 @@
+<div>
+<%= link_to @tutorial_part.tutorial.name, @tutorial_part.tutorial %>
+<% if signed_in? && current_user == @tutorial_part.user %>
+    <%= link_to 'Edit', edit_tutorial_part_path %>
+    <%= link_to 'Remove', @tutorial_part, :class=>:destroy, :confirm => 'Are you sure?', :method => :delete %>
+<% end %>
+</div>

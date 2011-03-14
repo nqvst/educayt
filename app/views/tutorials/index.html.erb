@@ -1,0 +1,16 @@
+<div class="tutorial_index_header">
+   <%= link_to 'Create new tutorial', new_tutorial_path %>
+</div>
+
+<%if !@tutorials.empty? %>
+  <div class="tutorial">
+  	<ul>  		
+    	<% @tutorials.each do |tutorial| %>
+    	<li class="feed_item" ><%= link_to tutorial.name, tutorial %></li>
+    	<% end %>
+  	</ul>
+  </div>
+  <%= will_paginate @tutorials %>
+<% else %>
+  <strong>This user has not yet created any tutorials</strong>
+<% end %>

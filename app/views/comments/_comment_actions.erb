@@ -1,0 +1,4 @@
+<%if current_user == @comment.user || %>
+<%CommentablesHelper.get_object_from_commentable(@comment.commentable).user = current_user%>
+  <%= link_to 'remove', @comment, :method => :delete, :title => 'remove this comment'%>
+<% end %>

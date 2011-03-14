@@ -1,0 +1,4 @@
+<% form_for current_user.subscriptions.find_by_followable_id(@followable),
+    :html => { :method => :delete } do |f| %>
+  <div class="actions"><%= f.submit "Unsubscribe" %></div>
+<% end %>

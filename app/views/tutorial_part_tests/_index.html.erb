@@ -1,0 +1,23 @@
+<h1>Listing tutorial_part_tests</h1>
+
+<table>
+  <tr>
+    <th>Tutorial part</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tutorial_part_tests.each do |tutorial_part_test| %>
+  <tr>
+    <td><%= tutorial_part_test.tutorial_part_id %></td>
+    <td><%= link_to 'Show', tutorial_part_test %></td>
+    <td><%= link_to 'Edit', edit_tutorial_part_test_path(tutorial_part_test) %></td>
+    <td><%= link_to 'Destroy', tutorial_part_test, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tutorial part test', new_tutorial_part_test_path %>

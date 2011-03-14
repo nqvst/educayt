@@ -1,0 +1,8 @@
+<% unless @tutorial_parts.empty? %>
+  <div class="tutorial">
+    <ul>
+    <%= render @tutorial_parts %>
+    </ul>
+  </div>
+  <%= will_paginate @tutorial_parts %>
+<% end %>

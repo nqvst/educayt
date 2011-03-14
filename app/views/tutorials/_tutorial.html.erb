@@ -1,0 +1,7 @@
+  <div class="tutorial">
+    <p class="content">
+      <%= link_to tutorial.name, tutorial_path(tutorial) %>
+      <%= tutorial.user.name %>
+      (<%= time_ago_in_words(tutorial.created_at) %> ago)
+     </p>
+  </div>

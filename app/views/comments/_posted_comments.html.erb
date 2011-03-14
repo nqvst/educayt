@@ -1,0 +1,14 @@
+<div id="posted_comments">
+<% if @commentable.get_visible_comments != nil %>
+  <ul>
+    <% @commentable.get_visible_comments.each do |c| %>
+    <% @comment = c %>
+    <li>
+        <%=  render 'comments/comment' %>
+    </li>
+  <%end%>
+  </ul>
+<%else%>
+  <p>No comments yet...</p>
+<%end%>
+</div>

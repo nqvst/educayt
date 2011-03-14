@@ -1,0 +1,5 @@
+<li class="tutorial_part content">
+    <%= link_to tutorial_part.title, tutorial_part_path(tutorial_part)%>
+    <%= tutorial_part.description %>
+    (<%= time_ago_in_words(tutorial_part.created_at) %> ago).
+</li>

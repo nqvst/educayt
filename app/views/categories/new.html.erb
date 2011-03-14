@@ -1,0 +1,11 @@
+
+<%= @category.name %>
+<%form_for (@category) do |f|%>
+ <div class="field">
+    <%= f.label :category %><br />
+    <%= f.text_field :name%>
+  </div>
+<div class="actions">
+    <%= f.submit "Create" %>
+  </div>
+<% end %>

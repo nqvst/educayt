@@ -1,0 +1,10 @@
+	<% unless @subcategory.nil?%>
+		<%= @subcategory.name %>
+		<% unless @tutorials.nil?%>
+				 <% @tutorials.each do |tutorial| %>
+				<li class="feed_item">
+					<%=link_to tutorial.name , tutorial %>
+				</li>
+			<% end %>
+		<% end %>
+	<% end %>

@@ -1,0 +1,17 @@
+
+<div class="field">
+  Category  <%= @category.name %>
+</div>
+<%  form_for (@subcategory) do |f|%>
+ <div class="field">
+    <%= f.label :Subcategory%><br />
+    <%= f.text_field :name%>
+  </div>
+<div class="field">
+    <%= hidden_field_tag :category_id, @category.id%>
+  </div>
+<div class="actions">
+    <%= f.submit "Create" %>
+  </div>
+<% end %>
+

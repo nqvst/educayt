@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Media type:</b>
+  <%= @tutorial_media.tutorial_media_type_id %>
+</p>
+
+<p>
+  <b>Tutorial part:</b>
+  <%= @tutorial_media.tutorial_part_id %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @tutorial_media.url %>
+</p>
+
+
+<%= link_to 'Edit', edit_tutorial_media_path(@tutorial_media) %> |
+<%= link_to 'Back', tutorial_medias_path %>

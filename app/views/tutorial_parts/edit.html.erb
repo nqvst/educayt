@@ -1,0 +1,37 @@
+<% javascript 'tutorial_part_dynamic_forms' %>
+<%= render 'header' %>
+<h1>Edit Part</h1>
+
+<%= form_for(@tutorial_part) do |f| %>
+  <!-- # render 'shared/error_messages' -->
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :content_text %><br />
+    <%= f.text_area :content_text %>
+  </div>
+    <label>Media (url)</label><br/>
+    <%@i = 0 %>
+    <%@tutorial_part.tutorial_medias.each do |tutorial_media| %>
+      <% @i = @i + 1 %>
+      <% @tutorial_media = tutorial_media %>
+      <div id="<%= 'mediaForm' + @i.to_s %>">
+        <%=  render 'tutorial_medias/edit_external' %>
+      </div>
+    <%end %>
+    <br/>
+  <a id="create_input_link_id" href="#1" onClick='createNewInput()'>+ add media</a>
+  <div class="field">
+    <%= f.label :in_order %><br />
+    <%= f.text_field :in_order %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>

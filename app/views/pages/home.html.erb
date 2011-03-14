@@ -1,0 +1,19 @@
+  
+<% if !signed_in? %>
+<h1> welcome to Educayt.me!</h1>
+  <ul class="left blue">
+  	<% Tutorial.all.each do |tutorial|%>         
+		<li class="feed_item">
+			<%= link_to tutorial.name, tutorial %> by
+			<%= link_to tutorial.user.name, tutorial.user %><br/>
+			<%= tutorial.description %>
+		</li>
+	<% end %>
+  </ul>	
+  <div class="right">
+  	<%= render 'sessions/login'%>  	
+  </div>
+  <%else%>
+  <h2> Latest tutorials</h2>
+  	<%= render 'feed'%>  	
+   <%end%>

@@ -1,0 +1,25 @@
+
+var subcategories = new Array();
+<% @subcategories.each do |sub| %>
+<%  c_id = sub.category_id %>
+<% if !c_id%>
+<%  c_id = "null"%>
+<%end%>
+  subcategories.push(new Array(<%= c_id  %>, '<%= sub.name %>', <%= sub.id %>));
+<% end %>
+function categorySelected() {
+   var category_id = $('#tutorial_category_id option:selected').val();
+   var options = '';
+
+  for(i = 0; i< subcategories.length;i++){
+    if (subcategories[i][0] == category_id) {
+    options += '<option value="' + subcategories[i][2] +'">' + subcategories[i][1] + '</option>';
+
+    }
+   }
+   $('select#tutorial_subcategory_id').html(options);
+};
+$(document).ready(function(){
+  categorySelected()
+  $('#tutorial_category_id').change(categorySelected);
+  });

@@ -1,0 +1,29 @@
+
+<% javascript 'dynamic_subcategories' %>
+
+<h1>New Tutorial</h1>
+
+
+<%= form_for(@tutorial) do |f| %>
+  <!-- # render 'shared/error_messages' -->
+  <%=  render 'shared/error_messages', :object => f.object %>
+   <div class="field">
+    <%= f.label :category %><br />
+    <%= f.collection_select :category_id, Category.find(:all), :id, :name, :promt => "Select a category" %>
+  </div>
+  <div class="field" id="subcategory_field">
+    <%= f.label :subcategory %><br />
+    <%= f.collection_select :subcategory_id, Subcategory.find(:all), :id, :name, :promt => "Select a subcategory" %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Create" %>
+  </div>
+<% end %>

@@ -1,0 +1,10 @@
+<div class="tutorial_part">
+   <%=  render 'header' %>
+   <h1><%=@tutorial_part.title %></h1>
+   <p><%= @tutorial_part.content_text %></p>
+   
+   <% @tutorial_part.tutorial_medias.each  do |media| %>
+      <% @media = media %>
+      <%=  render media %>
+   <%end%>
+</div>

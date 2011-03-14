@@ -1,0 +1,17 @@
+
+<ul class="categories">
+  <% @categories.each do |category|%>
+  <li> 
+      <%=category.name%>
+      <%=  link_to "add subcategory", new_subcategory_path(:category_id => category.id) %>
+    <ul>
+      <%category.subcategories.each do |s|%>
+      <li>
+        <%=  s.name%>
+      </li>
+      <% end %>
+    </ul>
+   
+  </li>
+  <%  end %>
+</ul>

@@ -1,0 +1,27 @@
+
+var subcategories = new Array();
+<% for subcategory in @subcategories -%>
+  subcategories.push(new Array(<%= subcategory.country_id %>, '<%=h subcategory.name %>', <%= subcategory.id %>));
+<% end %>
+
+function categorySelected() {
+  category_id = $('tutorial_category_id').getValue();
+  options = $('tutorial_subcategory_id').options;
+  options.length = 1;
+  subcategories.each(function(state) {
+    if (state[0] == category_id) {
+      options[options.length] = new Option(subcategory[1],subcategory[2]);
+    }
+  });
+  if (options.length == 1) {
+    $('subcategory_field').hide();
+  } else {
+    $('subcategory_field').show();
+  }
+}
+
+document.observe('dom:loaded', function() {
+  categorySelected();
+  $('tutorial_category_id').observe('change', categorySelected);
+});
+

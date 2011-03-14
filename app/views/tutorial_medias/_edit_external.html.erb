@@ -1,0 +1,12 @@
+<iframe id="mediaForm<%= @i %>Iframe" 
+        src="<%=  remove_html_tags(@tutorial_media.url) %>">
+</iframe>
+<br>
+  <input type="hidden" id="tutorial_media_id<%= @i %>" name="tutorial_media_id_<%= @i %>" value="<%=  @tutorial_media.id %>"/>
+  <input type="url" id="field<%= @i %>" name="field<%= @i %>" value="<%=  remove_html_tags(@tutorial_media.url) %>" />
+  <a href="#1" onClick="previewInput(<%= @i %> )">preview</a>
+  <br/>
+  <textarea rows="2" cols="1" name="description<%= @i %>" id="description<%= @i %>">
+  <%=  @tutorial_media.description %>
+  </textarea>
+  

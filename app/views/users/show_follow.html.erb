@@ -1,0 +1,12 @@
+<div class="following">
+	
+      <h1><%= @title %></h1>
+
+      <% unless @users.empty? %>
+        <ul class="feed_item users">
+          <%= render @users %>
+        </ul>
+        <%= will_paginate @users %>
+      <% end %>
+
+</div>

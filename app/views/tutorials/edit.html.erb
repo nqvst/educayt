@@ -1,0 +1,41 @@
+<%= render 'tutorials/header' %>
+<h1><%= @tutorial.name %></h1>
+<%= form_for(@tutorial) do |f| %>
+  <%=  render 'shared/error_messages', :object => f.object  %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div id="tutorial_parts">
+    <% unless @tutorial.tutorial_parts.empty? %>
+    <strong>Tutorial Parts</strong>
+      <ul id="sortable">
+        <% @tutorial.tutorial_parts.each do |tutorial_part| %>
+        <li class="list_item" id="part_<%= tutorial_part.id %>">
+          <%= link_to tutorial_part.title,
+            edit_tutorial_part_path(tutorial_part),
+            :id => 'tutorial_part_'+ tutorial_part.id.to_s %> 
+          <a href="#" name="move_up" title="click to move up" onclick="moveLi('part_<%= tutorial_part.id %>', 'up')">
+          <%= image_tag("icons/page_up.gif", :alt => 'up') %>
+          </a>
+          <a href="#" name="move_down" title="click to move down" onclick="moveLi('part_<%= tutorial_part.id %>', 'down')">
+          <%= image_tag("icons/page_down.gif", :alt => 'down') %>
+          </a>
+          </li>
+        <% end %>
+      </ul>
+    <%end%>
+  </div>
+  <div class="field">
+    <%= hidden_field_tag :tutorial_parts_order, params[:tutorial_parts_order] %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Save" %>
+  </div>
+<% end %>
+<%= javascript 'edit_tutorial' %>
+

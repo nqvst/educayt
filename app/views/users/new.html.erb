@@ -1,0 +1,39 @@
+<h1>Sign up</h1>
+
+<%= form_for(@user) do |f| %>
+<%= render 'shared/error_messages', :object => f.object %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :value => params[:name]%>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <% if params[:email] != nil %>
+      <%=  params[:email]%>
+      <%= hidden_field :email, params[:email]%>
+    <% else %>
+       <%=  f.text_field :email %>
+    <%end%>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation, "Confirmation" %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="field">
+    <%= f.label "Write something about yourself"  %>
+	<br />
+	<%= f.text_area :bio %>
+  </div>
+ 
+  <div class="field">
+    <%= hidden_field_tag :uid, params[:uid] %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>

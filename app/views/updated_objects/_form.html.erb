@@ -1,0 +1,25 @@
+<%= form_for(@updated_object) do |f| %>
+  <% if @updated_object.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@updated_object.errors.count, "error") %> prohibited this updated_object from being saved:</h2>
+
+      <ul>
+      <% @updated_object.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :object_type_id %><br />
+    <%= f.text_field :object_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :local_id %><br />
+    <%= f.text_field :local_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

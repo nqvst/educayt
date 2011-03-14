@@ -1,0 +1,18 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+#  user:
+#    flash:
+#      error:
+#
+#      success:
+#        profile_updated: "Profile updated!"
+#        welcome: "Welcome to EducaytMe"
+#      notice:
+#        activate_account: "You have to activate your account now.\n Check your email for activation link."
+#
+#    title:
+#      sign_up: "Sign up"
+#
+#  pages:

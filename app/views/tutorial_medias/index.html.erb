@@ -1,0 +1,27 @@
+<h1>Listing tutorial_medias</h1>
+
+<table>
+  <tr>
+    <th>Media type</th>
+    <th>Tutorial part</th>
+    <th>Url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tutorial_medias.each do |tutorial_media| %>
+  <tr>
+    <td><%= tutorial_media.tutorial_media_type_id %></td>
+    <td><%= tutorial_media.tutorial_part_id %></td>
+    <td><%= tutorial_media.url %></td>
+    <td><%= link_to 'Show', tutorial_media %></td>
+    <td><%= link_to 'Edit', edit_tutorial_media_path(tutorial_media) %></td>
+    <td><%= link_to 'Destroy', tutorial_media, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tutorial media', new_tutorial_media_path %>

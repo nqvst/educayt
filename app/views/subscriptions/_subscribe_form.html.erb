@@ -1,0 +1,7 @@
+  <div id="follow_form">
+  <% if subscribing?(@followable, current_user)%>
+    <%= render 'subscriptions/unsubscribe' %>
+  <% else %>
+    <%= render 'subscriptions/subscribe' %>
+  <% end %>
+  </div>

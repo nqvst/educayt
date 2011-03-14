@@ -1,0 +1,50 @@
+<%= form_for(@tutorial_part_test) do |f| %>
+  <% if @tutorial_part_test.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tutorial_part_test.errors.count, "error") %> prohibited this tutorial_part_test from being saved:</h2>
+
+      <ul>
+      <% @tutorial_part_test.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% @tutorial = Tutorial.find(params[:tutorial_id]) %>
+  <div class="field">
+    <%= link_to @tutorial.name, @tutorial %>
+    <%= hidden_field_tag :tutorial_id, params[:tutorial_id] %>
+  </div>
+
+   <div id ="mediaForm"class="field">
+    <br/>
+    <div id ="mediaForm1">
+      <label>Title</label>
+      <br/>
+
+      <input type='text' id='field1' name="field1" value=''/>
+      <br/>
+      <label>Question</label>
+      <br/>
+      <textarea id='description1' name="description1"></textarea>
+      <br/>
+      <label>Possible answers</label>
+      <br/>
+      <input name ="field1_button1" value="field1_button1" type="checkbox"></input>
+      <input type="text" id="field1_answer1" name="field1_answer1" value=""/>
+      <input name ="field1_button2" value="field1_button2" type="checkbox"></input>
+      <input type="text" id="field1_answer2" name="field1_answer2" value=""/>
+      <input name ="field1_button3" value="field1_button3" type="checkbox"></input>
+      <input type="text" id="field1_answer3" name="field1_answer3" value=""/>
+      
+      <a href="#1" onClick='createNewInput()'>+</a>
+    </div>
+  </div>
+
+  
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

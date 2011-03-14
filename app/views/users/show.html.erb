@@ -1,0 +1,30 @@
+<div class="profile" summary="Profile information">
+
+    <div class="nav">
+      <strong>Name</strong> <%= @user.name %><br />
+      <strong>URL</strong>  <%= link_to user_path(@user), @user %> <br/>
+      <strong>Tutorials</strong> <%= link_to @user.tutorials.length, user_tutorials_path(:user_id => @user.id) %>
+
+     <% unless @user.following.empty? %>
+        <% @user.following.each do |user| %>
+          <%= link_to gravatar_for(user, :size => 30), user %>
+          
+        <% end %>
+      <% end %>
+    </div>
+    <div class="main">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+      <%= render 'subscriptions/subscribe_form' if signed_in? %>
+      	<ul>
+      		<% @tutorials.each do |t| %>
+	      		<li class="feed_item">
+	      			<%= link_to t.name, t %>
+	      			<%= t.description %>
+	      		</li>
+      		<% end %>
+   	 	</ul>
+    </div>
+</div>

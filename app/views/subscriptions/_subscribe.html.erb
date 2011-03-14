@@ -1,0 +1,5 @@
+<%@subscription = Subscription.new%>
+<% form_for @subscription do |f| %>
+  <div><%= hidden_field_tag :followable_id, @followable.id %></div>
+  <div class="actions"><%= f.submit "Subscribe" %></div>
+<% end %>

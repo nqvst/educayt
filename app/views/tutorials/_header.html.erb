@@ -1,0 +1,5 @@
+<% if signed_in? && @tutorial.user_id == current_user.id %>
+  <%= link_to 'Edit', edit_tutorial_path(@tutorial) %>
+  <%= link_to 'Add Part', new_tutorial_part_path(:tutorial_id => @tutorial.id) %>
+  <%= link_to 'Remove', @tutorial, :method=>:delete, :class=>:destroy,:confirm=>"Are you sure?" %>
+<% end %>

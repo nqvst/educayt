@@ -1,0 +1,50 @@
+syntax: glob
+
+#hg profileœ
+.hg/hgrc
+
+# Netbeans
+nbproject
+
+# OS x
+.DS_store
+
+# Windows
+
+# Eclipse
+.settings/*.**
+.classpath
+.project
+*.class
+\.orig\..*$
+\.orig$
+\.chg\..*$
+\.rej$
+\.conflict\~$
+educaytme/code/tmp
+educaytme/code/log
+
+educayt/tmp/
+educayt/log/
+educaytme/Gemfile
+educaytme/Gemfile.lock
+^log$
+syntax: regexp
+^Gemfile$
+syntax: regexp
+^Gemfile\.jacks\.secret\.lock$
+syntax: regexp
+^Gemfile\.lock$
+syntax: regexp
+^tmp/pids/server\.pid$
+syntax: regexp
+\.log$
+syntax: regexp
+^db/test\.sqlite3$
+^db/development\.sqlite3$
+syntax: regexp
+\.sqlite3$
+syntax: regexp
+\.DS_Store$
+
+

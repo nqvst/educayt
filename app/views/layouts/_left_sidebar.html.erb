@@ -1,0 +1,19 @@
+<div id="left_sidebar">
+	<div id="inner_sidebar">
+		
+		<% if signed_in? %>
+        <%= gravatar_for current_user %><br/>
+        
+        <%= current_user.name %>
+		<ul class="blue">
+			<li><%= link_to "Profile", current_user %></li>
+			<li><%= link_to "Settings", edit_user_path(current_user) %></li>
+			<%= render 'users/stats' %>
+		<% else %>
+			<li><%= link_to "Sign up now!", signup_path %></li>
+			<li><%= link_to "Sign in with Facebook" ,"/auth/facebook"%></li>
+			<li><%= link_to "Sign in", signin_path %></li>
+		<% end %>
+		</ul>
+	</div>
+</div>

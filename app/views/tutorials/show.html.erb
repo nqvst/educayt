@@ -1,0 +1,31 @@
+<div class="tutorial" >
+  <div class="main">
+    <%= render 'tutorials/header' %>
+    <div class="tutorial_info">
+      <h1><%= @tutorial.name %></h1> by <%= link_to @tutorial.user.name, @tutorial.user %>
+      <p><%= @tutorial.description %></p>
+      <%= render 'subscriptions/subscribe_form' if signed_in? %>
+    </div>
+    <div class="tutorial_parts_list">
+    <ul>
+      <%= render @tutorial.tutorial_parts %>
+    </ul>
+    </div>
+    <div>
+      <h2>Tests</h2>
+    <% unless @tutorial.tutorial_part_tests.empty? %>
+      <div>
+        
+      </div>
+    <% else %>
+      <p>This tutorial has no tests.
+        <% if current_user == @tutorial.user %>
+          <%= link_to 'Create a new test?', new_tutorial_tutorial_part_test_path(@tutorial) %>
+        <% end %>
+      </p>
+    <% end %>
+    
+    </div>
+    <%= render 'comments/comments_field' %>
+  </div>
+</div>

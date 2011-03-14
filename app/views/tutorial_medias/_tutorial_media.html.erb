@@ -1,0 +1,8 @@
+<li class="tutorial_media content">
+  <%= raw CGI::unescapeHTML(get_image_tag(@media.url)) %>
+    <br/>
+    <%= @media.description %>
+    <%  if current_user == @media.tutorial.user %>
+      <%= link_to 'Remove media', @media, :method=>:delete, :class=>:destroy,:confirm=>"Are you sure?" %>
+    <% end %>
+</li>
